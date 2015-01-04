@@ -1,0 +1,29 @@
+{
+  "name": "hspd-app",
+  "description": "A client for the hspd : hubot script per day",
+  "version": "1.0.0",
+  "author": {
+    "name": "bouzuya",
+    "mail": "m@bouzuya.net",
+    "url": "http://bouzuya.net"
+  },
+  "bugs": {
+    "url": "https://github.com/bouzuya/hspd-app/issues"
+  },
+  "homepage": "https://github.com/bouzuya/hspd-app",
+  "keywords": [
+    "hspd",
+    "hubot",
+    "hubot-script",
+    "hubot-script-per-day"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/hspd-app"
+  },
+  "scripts": {
+    "test": "exit 0"
+  }
+}
