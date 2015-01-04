@@ -6,7 +6,7 @@ This product is one of [the bouzuya's shuburi][shuburi]. The product was release
 
 # License
 
-MIT
+[MIT](LICENSE)
 
 # Author
 
