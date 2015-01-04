@@ -4,6 +4,10 @@ A client for the hspd : hubot script per day.
 
 This product is one of [the bouzuya's shuburi][shuburi]. The product was released in 2015-W02.
 
+# Development
+
+See `npm run`.
+
 # License
 
 [MIT](LICENSE)
