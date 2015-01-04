@@ -10,6 +10,9 @@
   "bugs": {
     "url": "https://github.com/bouzuya/hspd-app/issues"
   },
+  "devDependencies": {
+    "tsd": "^0.5.7"
+  },
   "homepage": "https://github.com/bouzuya/hspd-app",
   "keywords": [
     "hspd",
