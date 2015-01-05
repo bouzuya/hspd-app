@@ -67,6 +67,8 @@ gulp.task 'typescript', ->
   typescript(src: paths.appFiles, dest: paths.compiledAppDir)
 
 gulp.task 'test', (done) ->
+  # TODO: use karma
+
   espower = require 'gulp-espower'
   merge = require 'merge-stream'
   mocha = require 'gulp-mocha'
@@ -111,6 +113,12 @@ gulp.task 'tsd', ->
       overwriteFiles: true
       saveToConfig: false
     api.reinstall options
+
+gulp.task 'browser-sync', ->
+  browserSync = require 'browser-sync'
+  browserSync
+    server:
+      baseDir: './dist'
 
 gulp.task 'watch', ->
   gulp.watch [paths.appFiles, paths.testFiles], ['test']
