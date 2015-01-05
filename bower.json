@@ -1,0 +1,18 @@
+{
+  "name": "hspd-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bouzuya/hspd-app",
+  "authors": [
+    "bouzuya <m@bouzuya.net>"
+  ],
+  "description": "A client for hspd",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
