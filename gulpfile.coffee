@@ -7,7 +7,7 @@ paths =
   appFiles: './app/**/*.ts'
   testFiles: './test/**/*.ts'
   distDir: './dist'
-  compiledApp: './.tmp/app/index.js'
+  compiledApp: './.tmp/app/scripts/app.js'
   compiledAppFiles: './.tmp/app/**/*.js'
   compiledAppDir: './.tmp/app'
   compiledTestFiles: './.tmp/test/**/*.js'
