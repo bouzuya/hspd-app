@@ -3,6 +3,7 @@ gutil = require 'gulp-util'
 ts = require 'gulp-typescript'
 
 paths =
+  appDir: './app'
   appFiles: './app/**/*.ts'
   testFiles: './test/**/*.ts'
   distDir: './dist'
@@ -40,7 +41,7 @@ webpack = (src, dst) ->
     .pipe wp options
     .pipe gulp.dest dst
 
-gulp.task 'build', (done) ->
+gulp.task 'build', ['usemin'], (done) ->
   typescript(src: paths.appFiles, dest: paths.compiledAppDir).on 'end', ->
     webpack(paths.compiledApp, paths.distDir).on 'end', done
   null
@@ -52,6 +53,13 @@ gulp.task 'clean', (done) ->
     paths.compiledTestDir
     paths.distDir
   ], done
+
+gulp.task 'usemin', ->
+  usemin = require 'gulp-usemin'
+  gulp
+    .src paths.appDir + '/index.html'
+    .pipe usemin()
+    .pipe gulp.dest paths.distDir
 
 gulp.task 'deps', ['tsd']
 
