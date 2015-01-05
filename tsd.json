@@ -16,6 +16,12 @@
     },
     "power-assert-formatter/power-assert-formatter.d.ts": {
       "commit": "494b30d2327ab489fa5b5f082a3c9a299e4c5644"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "494b30d2327ab489fa5b5f082a3c9a299e4c5644"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "494b30d2327ab489fa5b5f082a3c9a299e4c5644"
     }
   }
 }
