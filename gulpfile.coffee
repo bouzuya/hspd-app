@@ -67,13 +67,10 @@ gulp.task 'typescript', ->
   typescript(src: paths.appFiles, dest: paths.compiledAppDir)
 
 gulp.task 'test', (done) ->
-  # TODO: use karma
-
   espower = require 'gulp-espower'
+  karma = require 'gulp-karma'
   merge = require 'merge-stream'
-  mocha = require 'gulp-mocha'
   sourcemaps = require 'gulp-sourcemaps'
-  istanbul = require 'gulp-istanbul'
 
   gulp
     .src paths.appFiles
@@ -84,24 +81,24 @@ gulp.task 'test', (done) ->
     .pipe gulp.dest paths.compiledAppDir
     .on 'end', ->
       gulp
-        .src paths.compiledAppFiles
-        .pipe istanbul(includeUntested: true)
-        .pipe istanbul.hookRequire()
-        .on 'finish', ->
+        .src paths.testFiles
+        .pipe sourcemaps.init()
+        .pipe ts typescriptProject
+        .js
+        .pipe espower()
+        .pipe sourcemaps.write()
+        .pipe gulp.dest(paths.compiledTestDir)
+        .on 'end', ->
           gulp
-            .src paths.testFiles
-            .pipe sourcemaps.init()
-            .pipe ts typescriptProject
-            .js
-            .pipe espower()
-            .pipe sourcemaps.write()
-            .pipe gulp.dest(paths.compiledTestDir)
-            .on 'end', ->
-              gulp
-                .src paths.compiledTestFiles
-                .pipe mocha().on('error', gutil.log)
-                .pipe istanbul.writeReports(paths.coverageDir)
-                .on 'end', done
+            .src paths.compiledTestFiles
+            .pipe karma(
+              configFile: 'karma.conf.js'
+              aciton: 'run'
+            )
+            .on 'error', (e) ->
+              gutil.log e
+              @emit 'end'
+            .on 'end', done
   null
 
 gulp.task 'tsd', ->
