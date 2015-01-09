@@ -49,6 +49,7 @@ gulp.task 'html', ->
     .src paths.appDir + '/index.html'
     .pipe usemin()
     .pipe gulp.dest paths.distDir
+    .pipe browserSync.reload(stream: true)
 
 gulp.task 'karma', (done) ->
   karma = require 'gulp-karma'
@@ -89,10 +90,11 @@ gulp.task 'typescript', ->
   merge = require 'merge-stream'
   compiled = gulp
     .src paths.appFiles
+    .pipe sourcemaps.init()
     .pipe typescript typescriptProject
   merge(
     compiled.dts.pipe gulp.dest paths.compiledAppDir
-    compiled.js.pipe gulp.dest paths.compiledAppDir
+    compiled.js.pipe(sourcemaps.write()).pipe gulp.dest paths.compiledAppDir
   )
 
 gulp.task 'typescript-app', ->
@@ -143,6 +145,7 @@ gulp.task 'webpack', ->
       filename: 'main.js'
     resolve:
       extensions: ['', '.js']
+    devtool: 'eval'
   gulp
     .src paths.compiledApp
     .pipe webpack options
