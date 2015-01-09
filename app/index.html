@@ -1,6 +1,14 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8" />
+  <title>hspd: hubot script per day</title>
+</head>
 <body ng-app="app">
-  <div ng-controller="AppCtrl">{{hoge}}</div>
+  <div ng-controller="AppCtrl as c">
+    {{c.hoge}}
+  </div>
+
   <!-- build:js vendor.js -->
   <script src="../bower_components/angular/angular.js"></script>
   <!-- endbuild -->
