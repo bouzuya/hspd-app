@@ -5,11 +5,17 @@ export class AppCtrl {
     '$http'
   ];
 
-  hoge: string;
+  message: string;
+  scripts: Array<{}>;
 
   constructor($http: ng.IHttpService) {
-    this.hoge = 'piyo';
+    this.message = 'now loading'
+    this.scripts = [];
 
-    $http.get('https://hspd-api.herokuapp.com/hubot_scripts');
+    $http.get<Array<{}>>('https://hspd-api.herokuapp.com/hubot_scripts')
+    .then((res) => {
+      this.message = 'loaded';
+      this.scripts = res.data;
+    });
   }
 }
