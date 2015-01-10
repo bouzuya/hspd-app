@@ -25,11 +25,32 @@ a.deprecated {
   text-decoration: underline line-through;
   color: #6EB7DB;
 }
+.loader {
+  display: none;
+}
+.loader.loading {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+}
+.body {
+  display: none;
+}
+.body.loaded {
+  display: block;
+}
 table {
   width: 90%;
   margin: 0 auto;
 }
 .script {
+  height: 128px;
+}
+.image {
+  width: 256px;
   height: 128px;
 }
 .image img {

@@ -5,16 +5,16 @@ export class AppCtrl {
     '$http'
   ];
 
-  message: string;
+  loaded: boolean;
   scripts: Array<{}>;
 
   constructor($http: ng.IHttpService) {
-    this.message = 'now loading'
+    this.loaded = false;
     this.scripts = [];
 
     $http.get<Array<{}>>('https://hspd-api.herokuapp.com/hubot_scripts')
     .then((res) => {
-      this.message = 'loaded';
+      this.loaded = true;
       this.scripts = res.data;
     });
   }
