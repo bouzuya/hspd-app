@@ -18,15 +18,13 @@
           <th>image</th>
           <th>#</th>
           <th>repo</th>
-          <th>date</th>
         </tr>
       </thead>
       <tbody>
         <tr class="script" ng-repeat="i in c.scripts | orderBy:'number'">
           <td class="image"><img ng-src="{{i.image}}" /></td>
-          <td class="number">day <span ng-bind="i.number">N</span>.</td>
+          <td class="number"><a ng-href="http://blog.bouzuya.net/{{i.date | date : 'yyyy/MM/dd'}}/">day <span ng-bind="i.number">N</span>.</a></td>
           <td class="repo"><a ng-href="{{i.repository}}" ng-class="{deprecated: i.deprecated}">bouzuya/<span ng-bind="i.name">hubot-XXX</span></a></td>
-          <td class="date"><a ng-href="http://blog.bouzuya.net/{{i.date | date : 'yyyy/MM/dd'}}/"><span ng-bind="i.date | date : 'yyyy-MM-dd'">YYYY-MM-DD</span></a></td>
         </tr>
       </tbody>
     </table>

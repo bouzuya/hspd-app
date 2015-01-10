@@ -25,6 +25,10 @@ a.deprecated {
   text-decoration: underline line-through;
   color: #6EB7DB;
 }
+table {
+  width: 90%;
+  margin: 0 auto;
+}
 .script {
   height: 128px;
 }
@@ -33,8 +37,7 @@ a.deprecated {
   height: 128px;
 }
 .number,
-.repo,
-.date {
+.repo {
   font-weight: bold;
   padding: 0 8px;
 }
@@ -44,13 +47,11 @@ a.deprecated {
 .repo {
   font-size: 48px;
 }
-.date {
-  font-size: 16px;
+.number a {
+  color: #000000;
+  text-decoration: none;
 }
-.date a {
-  color: #AAAAAA;
-}
-.date a:hover {
+.number a:hover {
   color: #208DC3;
 }
 .summary {
