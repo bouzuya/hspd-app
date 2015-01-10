@@ -3,12 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <title>hspd: hubot script per day</title>
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: 'Bree Serif', sans-serif;
+    }
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      text-align: center;
+    }
+    a {
+      color: #208DC3;
+      text-decoration: undereline;
+      border-radius: 8px;
+      padding: 8px;
+    }
+    a:visited {
+      color: #6EB7DB;
+    }
+    a:hover {
+      background-color: #F6D580;
+    }
+    .deprecated {
+      text-decoration: line-through;
+    }
+    a.deprecated {
+      text-decoration: underline line-through;
+      color: #6EB7DB;
+    }
+    .script {
+      height: 128px;
+    }
+    .image img {
+      width: auto;
+      height: 128px;
+    }
+    .number,
+    .repo,
+    .date {
+      font-weight: bold;
+      padding: 0 8px;
+    }
+    .number {
+      font-size: 80px;
+    }
+    .repo {
+      font-size: 48px;
+    }
+    .date {
+      font-size: 16px;
+    }
+    .date a {
+      color: #AAAAAA;
+    }
+    .date a:hover {
+      color: #208DC3;
+    }
+    .summary {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: right;
+    }
+    .summary .count {
+      font-size: 80px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body ng-app="app">
   <div ng-controller="AppCtrl as c">
-    {{c.hoge}}
+    <h1>hspd : hubot script per day</h1>
+    <p class="summary"><span class="count">{{c.scripts.length}}</span> scripts <span class="count">{{c.scripts.length}}</span> days </p>
+    <table>
+      <thead>
+        <tr>
+          <th>image</th>
+          <th>#</th>
+          <th>repo</th>
+          <th>date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="script" ng-repeat="i in c.scripts | orderBy:'number'">
+          <td class="image"><img ng-src="{{i.image}}" /></td>
+          <td class="number">day {{i.number}}.</td>
+          <td class="repo"><a ng-href="{{i.repository}}" ng-class="{deprecated: i.deprecated}">bouzuya/{{i.name}}</a></td>
+          <td class="date"><a ng-href="http://blog.bouzuya.net/{{i.date | date : 'yyyy/MM/dd'}}/">{{i.date | date : 'yyyy-MM-dd'}}</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
   <!-- build:js vendor.js -->
   <script src="../bower_components/angular/angular.js"></script>
   <!-- endbuild -->
