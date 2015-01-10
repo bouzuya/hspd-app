@@ -1,0 +1,64 @@
+body {
+  font-family: 'Bree Serif', sans-serif;
+}
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+}
+a {
+  color: #208DC3;
+  text-decoration: undereline;
+  border-radius: 8px;
+  padding: 8px;
+}
+a:visited {
+  color: #6EB7DB;
+}
+a:hover {
+  background-color: #F6D580;
+}
+.deprecated {
+  text-decoration: line-through;
+}
+a.deprecated {
+  text-decoration: underline line-through;
+  color: #6EB7DB;
+}
+.script {
+  height: 128px;
+}
+.image img {
+  width: auto;
+  height: 128px;
+}
+.number,
+.repo,
+.date {
+  font-weight: bold;
+  padding: 0 8px;
+}
+.number {
+  font-size: 80px;
+}
+.repo {
+  font-size: 48px;
+}
+.date {
+  font-size: 16px;
+}
+.date a {
+  color: #AAAAAA;
+}
+.date a:hover {
+  color: #208DC3;
+}
+.summary {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: right;
+}
+.summary .count {
+  font-size: 80px;
+  font-weight: bold;
+}
