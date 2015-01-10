@@ -49,8 +49,7 @@
   },
   "scripts": {
     "clean": "gulp clean",
-    "postinstall": "bower install && tsd reinstall",
-    "prestart": "gulp build",
+    "prestart": "bower install && tsd reinstall && gulp build",
     "start": "node server.js",
     "test": "gulp test",
     "watch": "gulp watch"
