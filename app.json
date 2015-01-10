@@ -9,7 +9,12 @@
   ],
   "website": "https://github.com/bouzuya/hspd-app",
   "repository": "https://github.com/bouzuya/hspd-app",
-  "env": {},
+  "env": {
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "always false",
+      "value": "false"
+    }
+  },
   "addons": []
 }
 
