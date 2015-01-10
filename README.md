@@ -8,6 +8,10 @@ This product is one of [the bouzuya's shuburi][shuburi]. The product was release
 
 See `npm run`.
 
+# Heroku Button
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 # License
 
 [MIT](LICENSE)
