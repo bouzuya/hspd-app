@@ -1,0 +1,15 @@
+{
+  "name": "hspd APP",
+  "description": "A client for hspd : hubot script per day",
+  "keywords": [
+    "bouzuya",
+    "hspd",
+    "hubot-scripts",
+    "hubot"
+  ],
+  "website": "https://github.com/bouzuya/hspd-app",
+  "repository": "https://github.com/bouzuya/hspd-app",
+  "env": {},
+  "addons": []
+}
+
