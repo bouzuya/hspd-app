@@ -139,6 +139,7 @@ gulp.task 'watch', ->
   gulp.watch [
     paths.appFiles
     paths.testFiles
+    paths.appDir + '/styles/*.css'
     paths.appDir + '/index.html'
   ], ['test-and-build']
   browserSync
