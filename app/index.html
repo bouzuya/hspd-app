@@ -74,7 +74,7 @@
 <body ng-app="app">
   <div ng-controller="AppCtrl as c">
     <h1>hspd : hubot script per day</h1>
-    <p class="summary"><span class="count">{{c.scripts.length}}</span> scripts <span class="count">{{c.scripts.length}}</span> days </p>
+    <p class="summary"><span class="count" ng-bind="c.scripts.length"></span> scripts <span class="count" ng-bind="c.scripts.length"></span> days </p>
     <table>
       <thead>
         <tr>
@@ -87,9 +87,9 @@
       <tbody>
         <tr class="script" ng-repeat="i in c.scripts | orderBy:'number'">
           <td class="image"><img ng-src="{{i.image}}" /></td>
-          <td class="number">day {{i.number}}.</td>
-          <td class="repo"><a ng-href="{{i.repository}}" ng-class="{deprecated: i.deprecated}">bouzuya/{{i.name}}</a></td>
-          <td class="date"><a ng-href="http://blog.bouzuya.net/{{i.date | date : 'yyyy/MM/dd'}}/">{{i.date | date : 'yyyy-MM-dd'}}</a></td>
+          <td class="number">day <span ng-bind="i.number">N</span>.</td>
+          <td class="repo"><a ng-href="{{i.repository}}" ng-class="{deprecated: i.deprecated}">bouzuya/<span ng-bind="i.name">hubot-XXX</span></a></td>
+          <td class="date"><a ng-href="http://blog.bouzuya.net/{{i.date | date : 'yyyy/MM/dd'}}/"><span ng-bind="i.date | date : 'yyyy-MM-dd'">YYYY-MM-DD</span></a></td>
         </tr>
       </tbody>
     </table>
