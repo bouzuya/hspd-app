@@ -24,6 +24,7 @@ gulp.task 'build', (done) ->
   run.apply run, [
     'typescript'
     'webpack'
+    'css'
     'html'
     done
   ]
@@ -42,6 +43,12 @@ gulp.task 'default', ->
   run.apply(run, ['clean', 'build'])
 
 gulp.task 'deps', ['tsd']
+
+gulp.task 'css', ->
+  gulp
+    .src paths.appDir + '/styles/*.css'
+    .pipe gulp.dest paths.distDir + '/styles'
+    .pipe browserSync.reload(stream: true)
 
 gulp.task 'html', ->
   usemin = require 'gulp-usemin'
@@ -149,4 +156,4 @@ gulp.task 'webpack', ->
   gulp
     .src paths.compiledApp
     .pipe webpack options
-    .pipe gulp.dest paths.distDir
+    .pipe gulp.dest paths.distDir + '/scripts'
