@@ -4,6 +4,8 @@ A client for the hspd : hubot script per day.
 
 This product is one of [the bouzuya's shuburi][shuburi]. The product was released in 2015-W02.
 
+Demo: [hspd-app.herokuapp.com](https://hspd-app.herokuapp.com/)
+
 # Development
 
 See `npm run`.
